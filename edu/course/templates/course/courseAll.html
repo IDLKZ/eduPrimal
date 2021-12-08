@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <section id="popular-courses" class="courses">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                {% include "course/components/course_sidebar.html" %}
+              </div>
+
+              <div class="col-md-8">
+                  <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                      {%  for course_item in courses %}
+                      <div class="col-lg-6 col-md-6 d-flex align-items-stretch my-4">
+                        <div class="course-item">
+                          <img src="{{ course_item.image.url }}" class="img-fluid" alt="..." style="width: 100%; height: 250px">
+                          <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                              <h4>
+                                  {{ course_item.category.title }}
+                              </h4>
+                              <p class="price">FREE</p>
+                            </div>
+
+                            <h3><a href="{{ course_item.get_absolute_url }}">
+                                {{ course_item.title }}
+                            </a></h3>
+                            <p>
+                                {{ course_item.subtitle }}
+                            </p>
+                            <div class="trainer d-flex justify-content-between align-items-center">
+                              <div class="trainer-profile d-flex align-items-center">
+                                <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                <span>
+                                    {% for author_item in course_item.authors.all %}
+                                        <small>
+                                        {{author_item.title}}
+                                        </small>
+                                        {% endfor %}
+                                </span>
+                              </div>
+                              <div class="trainer-rank d-flex align-items-start">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% empty %}
+                          <h4 class="text-danger">
+                          Увы, курсов нет
+                          </h4><!-- End Course Item-->
+                      {% endfor %}
+                    </div>
+                   {% include "course/components/pagination.html" %}
+              </div>
+          </div>
+      </div>
+
+
+
+  </section>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+.round-background-author{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.round-background-author-large{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.author-title{
+    color: #5fcf80!important;
+}

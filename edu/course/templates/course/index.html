@@ -1,0 +1,271 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% load static %}
+    {% load courseSidebar %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Запускай свою платформу для обучения или учись сам</h1>
+      <h2>Сертифицированные учителя, школы, университеты на одной платформе!</h2>
+      <a href="{% url "allCourses" %}" class="btn-get-started">Поехали!</a>
+    </div>
+  </section><!-- End Hero -->
+
+   <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static '/img/about.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Чем хорош наш проект?.</h3>
+            <p class="fst-italic">
+              Являешься ли ты человеком, ищущий курс, либо учителем ищущим своих последователей или университетом желающим
+                автоматизации процессов.Добро пожаловать, здесь ты найдешь:
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Полная система автоматизации учебных процессов</li>
+              <li><i class="bi bi-check-circle"></i> Система пользователей и ситема групп, создавай группы, отделы</li>
+              <li><i class="bi bi-check-circle"></i> Создавай видеокурс, вебинары, курсы в режиме онлайн</li>
+              <li><i class="bi bi-check-circle"></i> Гибкая система оплаты, контроля посещений и тестов, прокторинга</li>
+              <li><i class="bi bi-check-circle"></i> Система отчетов, документооборота, сертификации и прочее</li>
+              <li><i class="bi bi-check-circle"></i> Форумы, чаты, группы по интересам, новости и собственный блог</li>
+            </ul>
+            <p>
+              У нас вы можете создать собственную школу, мы предлагаем широкие возможности для различных школ и университетов
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="{{ category_count }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Категория</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="{{ course_count }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Курс</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="{{ lesson_count }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Видеоуроков</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="{{ quiz_count }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Экзаменов</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3>Почему стоит выбрать наш проект?</h3>
+              <p>
+                  Наш проект совмещает в себе полные возможности всех платформ,
+                  которые вы могли себе в целом вообразить в других платформах в том числе система прокторинга, документооборота,
+                  реализацией курсов, чат систему и многое другое
+
+              </p>
+              <div class="text-center">
+                <a href="/" class="more-btn">Напишите нам <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Компании и корпорации</h4>
+                    <p>
+                        У вас есть компания с учетом сотрудников,
+                        внутренним обучением, системой тестированием знаний, повышении квалификации,
+                        необходимый учет и согласованием всех отделов
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Университеты, школы и колледжи</h4>
+                    <p>
+                        Автоматизация государственных стандартов образования никогда еще не была такой легкой
+                        и централизованной ранее, но с нашей системой вы совместите десятки бизнес решений  в одном приложении
+                        Теперь управлять учебным процессом станет гораздо удобнее и доступной
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Специализированные учебные центры и частные преподаватели </h4>
+                    <p>
+                        Публикуйте авторский материал, или открывайте возможность тысячам людей узнать о ваших курсах
+                        Расширяйте учебную базу, пишите авторские статьи публикуйте и делитесь материалами
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+         {%  for category_item in categories %}
+          <div class="col-lg-3 col-md-4 my-2">
+            <div class="icon-box">
+              <div class="icon-box mt-4 mt-xl-0 mx-2"
+              style="background-image: url({{ category_item.image.url }}); background-position: center; background-repeat: no-repeat; background-size: cover"
+              >
+              </div>
+              <h3><a href="{% url "allCourses" %}?categories={{ category_item.id }}">
+                  {{ category_item.title }}
+              </a></h3>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Popular Courses Section ======= -->
+    <section id="popular-courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Курсы</h2>
+          <p>Популярные курсы</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+          {%  for course_item in courses %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="course-item">
+              <img src="{{ course_item.image.url }}" class="img-fluid" alt="..." style="width: 100%; height: 250px">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>
+                      {{ course_item.category.title }}
+                  </h4>
+                  <p class="price">FREE</p>
+                </div>
+
+                <h3><a href="{{ course_item.get_absolute_url }}">
+                    {{ course_item.title }}
+                </a></h3>
+                <p>
+                    {{ course_item.subtitle }}
+                </p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                    <span>
+                        {% for author_item in course_item.authors.all %}
+                            <small>
+                            {{author_item.title}}
+                            </small>
+                            {% endfor %}
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Popular Courses Section -->
+
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          {%  for author in authors %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member w-100">
+                <div class="member-image w-100" style="height: 275px;
+                    background-image: {% if author.image %}
+                        url({{ author.image.url }})
+                      {% else %}
+                        url('https://thumbs.dreamstime.com/b/author-word-wood-type-abstract-vintage-letterpress-printing-blocks-80925459.jpg')
+                        {% endif %};
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        ">
+
+                </div>
+              <div class="member-content my-2">
+                <a href="{{ author.get_absolute_url }}">
+                    <h4>{{ author.title }}</h4>
+                </a>
+                <span>{{ author.profession }}</span>
+                <div class="social">
+                    {% if author.instagram %}
+                        <a href="{{ author.instagram }}"><i class="bi bi-instagram"></i></a>
+                    {% endif %}
+                    {% if author.twitter %}
+                      <a href="{{ author.twitter }}"><i class="bi bi-twitter"></i></a>
+                    {% endif %}
+                    {% if author.facebook %}
+                        <a href="{{ author.facebook }}"><i class="bi bi-facebook"></i></a>
+                    {% endif %}
+                    {% if author.vk %}
+                        <a href="{{ author.vk }}"><i class="fab fa-vk"></i></a>
+                    {% endif %}
+                    {% if author.linkedin %}
+                        <a href="{{ author.linkedin }}"><i class="bi bi-linkedin"></i></a>
+                    {% endif %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main>
+
+
+{% endblock %}

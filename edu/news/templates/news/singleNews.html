@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% load static %}
+ <section id="events" class="events">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-12 d-flex align-items-stretch">
+            <div class="card w-100">
+              <div class="card-img">
+                  {% if news.image %}
+                <img src="{{ news.image.url }}" width="100%">
+                  {% else %}
+                <img src="{% static "/img/events-1.jpg}" %}" alt="...">
+                    {% endif %}
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title"><a href="">{{ news.title }}</a></h5>
+                <p class="fst-italic text-center">{{ news.published }}</p>
+                <p class="fst-italic text-center">{{ news.author }}</p>
+               <hr>
+               {{ news.description|safe }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% load static %}
+ <section id="events" class="events">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+        {% for news_item in news %}
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                  {% if news_item.thumbnail %}
+                <img src="{{ news_item.thumbnail.url }}" height="350px" width="100%">
+                  {% else %}
+                <img src="{% static "/img/events-1.jpg}" %}" alt="...">
+                    {% endif %}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="{% url "singleNewsAndBlog" news_item.slug %}">{{ news_item.title }}</a></h5>
+                <p class="fst-italic text-center">{{ news_item.published }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+        <div class="row">
+            {% include "course/components/pagination.html" %}
+        </div>
+
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load courseSidebar %}
+{% get_course_info as sidebar_data %}
+<div class="card" style="padding: 20px">
+<form action="{% url 'allCourses' %}" method="get">
+    <h4>Поиск по фильтру:</h4>
+    <hr>
+    <h5>Поиск по имени:</h5>
+    <div class="form-group">
+    <input type="text" class="form-control" id="searchName" aria-describedby="searchName" placeholder="Искать" name="search">
+    </div>
+    <hr>
+    <h5>Категория:</h5>
+    {% for category_item in sidebar_data.category_sidebar %}
+     <div class="custom-control custom-checkbox">
+        <label class="custom-control-label" for="{{ category_item.slug }}">
+         <input type="checkbox" class="custom-control-input"
+                 {% if category_item.id in categories_request  %}
+                checked="checked"
+                {% endif %}
+                name="categories"
+                value="{{ category_item.id }}"
+                id="{{ category_item.slug }}">
+            {{ category_item.title }}
+        </label>
+
+      </div>
+     {% endfor %}
+    <hr>
+    <h5>Авторы:</h5>
+    {% for author_item in sidebar_data.authors_sidebar %}
+     <div class="custom-control custom-checkbox">
+        <label class="custom-control-label" for="{{ author_item.slug }}">
+         <input type="checkbox" class="custom-control-input"
+                 {% if author_item.id in authors_request  %}
+                checked="checked"
+                {% endif %}
+                name="authors"
+                value="{{ author_item.id }}"
+                id="{{ author_item.slug }}">
+            {{ author_item.title }}
+        </label>
+      </div>
+     {% endfor %}
+    <hr>
+    <h5>Язык курса:</h5>
+    {% for language_item in sidebar_data.languages_sidebar %}
+     <div class="custom-control custom-checkbox">
+        <label class="custom-control-label" for="{{ language_item.slug }}">
+         <input type="checkbox" class="custom-control-input"
+                 {% if language_item.id in languages_request  %}
+                checked="checked"
+                {% endif %}
+                name="languages"
+                value="{{ language_item.id }}"
+                id="{{ language_item.slug }}">
+            {{ language_item.title }}
+        </label>
+      </div>
+     {% endfor %}
+    <hr>
+    <div class="d-flex justify-content-end">
+            <button type="submit" class="btn get-started-btn">
+                <i class="fas fa-search"></i>
+                Поиск
+            </button>
+    </div>
+</form>
+
+
+
+
+
+</div>

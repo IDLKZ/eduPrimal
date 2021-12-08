@@ -1,0 +1,7 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/my_static/ckeditor/ckeditor/';</script>
+<script>alert("123");</script>
+{{ block.super }}
+{% endblock %}
